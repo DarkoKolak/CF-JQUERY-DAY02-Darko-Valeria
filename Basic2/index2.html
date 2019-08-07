@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+	<title>Basic1</title>
+
+	<style>
+		
+		.picture{
+			width: 20vw;
+		}
+		.picture img {
+			width: 100%;
+		}
+		#container{
+			display: flex;
+		}
+	</style>
+</head>
+<body>
+
+
+
+<div id="output"></div>
+
+<div id="container">
+	
+<div class="picture">
+	<img src="../img/Bell.png" alt="Christmas bell">
+</div>
+
+<div class="picture">
+	<img src="../img/santa-claus.png" alt="Santa">
+</div>
+
+<div class="picture">
+	<img src="../img/Gift.png" alt="Gift">
+</div>
+
+</div>
+
+
+<script>
+	
+$("img").click(function(){
+
+	//var content = $(this).attr("alt");
+
+	$("#output").text("this is " +  $(this).attr("alt"));
+})
+
+
+</script>
+</body>
+</html>
