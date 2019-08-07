@@ -66,7 +66,7 @@ function showCart() {
 			}
 		}	
 	}
-	$("#totalPrice").text(`Total: ${calcTotalPrice()} EUR`); 
+	$("#totalPrice").text(`Total price (netto): ${calcTotalPrice()} EUR`); 
 	$("#closeButton").click(closeCart);
 
 	$(".rmvButton").click(removeFromCart);
@@ -85,7 +85,7 @@ function removeFromCart() {
 	$("#items").text(count);
 	console.log(i);
 	$(`#item${i}`).text(`Items: ${cart[i]}`);
-	$("#totalPrice").text(`Total: ${calcTotalPrice()} EUR`);
+	$("#totalPrice").text(`Total price (netto): ${calcTotalPrice()} EUR`);
 	if (cart[i] == 0) {
 		$(`#cartBox${i}`).remove();
 	}
@@ -104,20 +104,30 @@ function addinCart(){
 	count++;
 	$("#items").text(count);
 	$(`#item${i}`).text(`Items: ${cart[i]}`);
-	$("#totalPrice").text(`Total: ${calcTotalPrice()} EUR`);
+	$("#totalPrice").text(`Total price (netto): ${calcTotalPrice()} EUR`);
 }
+
 function deleteItem(){
-var i = $(this).attr("id")[3];
-count = count - cart[i];
-$("#items").text(count);
-cart[i] = 0;
-$(`#cartBox${i}`).remove();
-$("#totalPrice").text(`Total: ${calcTotalPrice()} EUR`);
-
-if (calcTotalPrice() == 0) {
-	$("#shoppingCart").css("display", "none");
+	var i = $(this).attr("id")[3];
+	count = count - cart[i];
+	$("#items").text(count);
+	cart[i] = 0;
+	$(`#cartBox${i}`).remove();
+	$("#totalPrice").text(`Total price (netto): ${calcTotalPrice()} EUR`);
+	if (calcTotalPrice() == 0) {
+		$("#shoppingCart").css("display", "none");
+		}
 }
 
+function reduction (){
+
+	if (totalPrice > 2000) {
+	 return totalPrice = (totalPrice * 0.88) * 1.22;
+	}
+	else if (totalPrice > 1000) {
+		return totalPrice = (totalPrice * 0.93) * 1.22;
+	}
+	else {
+		return totalPrice = totalPrice * 1.22;
+	}
 }
-
-
