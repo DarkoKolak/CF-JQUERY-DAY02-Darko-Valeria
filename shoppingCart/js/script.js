@@ -18,11 +18,13 @@ function addToCart() {
 	var i = $(this).attr("id")
 	if (cart[i] == undefined) {
 		cart[i] = 0;
-		count++;
-		$("#items").text(count);
 	}
-	cart[i] += 1; // 
-	console.log(cart);
+	cart[i] += 1; //
+	count += 1;
+	$("#items").text(count);
+
+	console.log(cart[i]);
+	console.log(count, typeof count);
 	closeCart();
 }
 
@@ -57,6 +59,7 @@ function showCart() {
 						<img src="${products[i].image}">
 						<span>${products[i].name} Price: ${products[i].price} EUR</span>
 						<p id="item${i}">Items: ${cart[i]}</p>
+						<button id="add${i}" class="addButton"><i class="fas fa-trash-alt"></i></button>
 						<button id="rmv${i}" class="rmvButton"><i class="fas fa-trash-alt"></i></button>
 					</div>`);	
 			}
@@ -66,6 +69,8 @@ function showCart() {
 	$("#closeButton").click(closeCart);
 
 	$(".rmvButton").click(removeFromCart);
+
+	$(".addButton").click(addinCart);
 }	
 
 // remove the items from cart and close the cart if no items present
@@ -73,7 +78,7 @@ function removeFromCart() {
 	var i = $(this).attr("id")[3];
 	console.log(i);
 	cart[i] -= 1;
-	count--;
+	count= count-1;
 	$("#items").text(count);
 	console.log(i);
 	$(`#item${i}`).text(`Items: ${cart[i]}`);
@@ -88,4 +93,13 @@ function removeFromCart() {
 
 function closeCart() {
 	$("#shoppingCart").css("display", "none");
+}
+
+function addinCart(){
+	var i = $(this).attr("id")[3];
+	cart[i] += 1;
+	count++;
+	$("#items").text(count);
+	$(`#item${i}`).text(`Items: ${cart[i]}`);
+	$("#totalPrice").text(`Total: ${calcTotalPrice()} EUR`);
 }
