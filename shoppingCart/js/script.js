@@ -9,6 +9,8 @@ for (var i = 0; i < products.length; i++) {
 		</div>`)
 }
 
+var count = 0;
+
 // adding items to cart array on click
 var cart = [];	
 $(".add").click(addToCart);
@@ -16,6 +18,8 @@ function addToCart() {
 	var i = $(this).attr("id")
 	if (cart[i] == undefined) {
 		cart[i] = 0;
+		count++;
+		$("#items").text(count);
 	}
 	cart[i] += 1; // 
 	console.log(cart);
@@ -69,6 +73,8 @@ function removeFromCart() {
 	var i = $(this).attr("id")[3];
 	console.log(i);
 	cart[i] -= 1;
+	count--;
+	$("#items").text(count);
 	console.log(i);
 	$(`#item${i}`).text(`Items: ${cart[i]}`);
 	$("#totalPrice").text(`Total: ${calcTotalPrice()} EUR`);
