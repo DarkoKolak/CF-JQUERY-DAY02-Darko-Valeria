@@ -59,6 +59,7 @@ function showCart() {
 						<img src="${products[i].image}">
 						<span>${products[i].name} Price: ${products[i].price} EUR</span>
 						<p id="item${i}">Items: ${cart[i]}</p>
+						<button id="del${i}" class="delButton"><i class="fas fa-trash-alt"></i></button>
 						<button id="add${i}" class="addButton"><i class="fas fa-trash-alt"></i></button>
 						<button id="rmv${i}" class="rmvButton"><i class="fas fa-trash-alt"></i></button>
 					</div>`);	
@@ -71,6 +72,8 @@ function showCart() {
 	$(".rmvButton").click(removeFromCart);
 
 	$(".addButton").click(addinCart);
+
+	$(".delButton").click(deleteItem);
 }	
 
 // remove the items from cart and close the cart if no items present
@@ -103,3 +106,18 @@ function addinCart(){
 	$(`#item${i}`).text(`Items: ${cart[i]}`);
 	$("#totalPrice").text(`Total: ${calcTotalPrice()} EUR`);
 }
+function deleteItem(){
+var i = $(this).attr("id")[3];
+count = count - cart[i];
+$("#items").text(count);
+cart[i] = 0;
+$(`#cartBox${i}`).remove();
+$("#totalPrice").text(`Total: ${calcTotalPrice()} EUR`);
+
+if (calcTotalPrice() == 0) {
+	$("#shoppingCart").css("display", "none");
+}
+
+}
+
+
