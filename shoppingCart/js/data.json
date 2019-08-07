@@ -1,29 +1,17 @@
 var products = [{
-	"name": "MacBook",
-	"model": "Pro",
-	"category": "Laptops",
-	"image": "img/img_pro.jpeg",
-	"price": 300,
-	"lager": 15,
+	"name": "Silver Crystal Bracelet",
+	"image": "img/bracelet.jpg",
+	"price": 155,
 },{
-	"name": "ASUS",
-	"model": "TransformPad",
-	"category": "Tablets",
-	"image": "img/img_asus.jpeg",
-	"price": 200,
-	"lager": 100,
-},{
-	"name": "Sony",
-	"model": "Noise Cancellor",
-	"image": "img/img_sony.jpeg",
-	"category": "Headphones",
-	"price": 50,
-	"lager": 200,
-},{
-	"name": "MacBook",
-	"model": "Air",
-	"image": "img/img_air.jpeg",
-	"category": "Laptops",
+	"name": "Diamond Earrings",
+	"image": "img/earring.jpg",
 	"price": 250,
-	"lager": 10,
+},{
+	"name": "Diamond Necklace",
+	"image": "img/necklase.jpg",
+	"price": 120,
+},{
+	"name": "18K White Gold Ring",
+	"image": "img/ring.jpg",
+	"price": 1190,
 }];
