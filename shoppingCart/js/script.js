@@ -72,10 +72,10 @@ function removeFromCart() {
 	$(`#item${i}`).text(`Items: ${cart[i]}`);
 	$("#totalPrice").text(`Total: ${calcTotalPrice()} EUR`);
 	if (cart[i] == 0) {
-		$(`cartBox${i}`).css("display", "none");
+		$(`#cartBox${i}`).remove();
 	}
 	if (calcTotalPrice() == 0) {
-		$("shoppingCart").css("display", "none");
+		$("#shoppingCart").css("display", "none");
 	}
 }
 
