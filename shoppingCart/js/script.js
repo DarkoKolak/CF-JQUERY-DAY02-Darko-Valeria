@@ -57,8 +57,8 @@ function showCart() {
 				shoppingCart.append(
 					`<div class="cartBox" id="cartBox${i}">
 						<img src="${products[i].image}">
-						<span>${products[i].name}</span><span>Price: ${products[i].price} EUR</span>
-						<p id="item${i} class="inCartItems">Items: ${cart[i]}</p>
+						<span>${products[i].name} Price: ${products[i].price} EUR</span>
+						<p id="item${i}">Items: ${cart[i]}</p>
 						<button id="add${i}" class="addButton"><i class="fas fa-plus-square"></i></i></button>
 						<button id="rmv${i}" class="rmvButton"><i class="fas fa-minus-square"></i></i></button>
 						<button id="del${i}" class="delButton"><i class="fas fa-trash-alt"></i></button>

@@ -62,7 +62,7 @@ nav {
   /*height: 40vw; either use overflow for many products or remove the height to adjust automatically*/
   /*height: 50%; Full height */
   /*overflow: auto;  Enable scroll if needed */
-  background-color: lightpink; /* Fallback color */
+  background-color: #8C4EA5; /* Fallback color */
   border-radius: 15px;
   padding: 1vw;
   flex-wrap: wrap;
@@ -121,7 +121,7 @@ nav {
 }
 
 .rmvButton {
-  color: yellow;
+  color: black;
   padding: 0;
   margin-top: 0.5vw;
   font-size: 2vw;
