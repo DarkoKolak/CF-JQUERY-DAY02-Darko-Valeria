@@ -6,8 +6,7 @@ for (var i = 0; i < products.length; i++) {
 	document.getElementById("shop").innerHTML += 
 		`<div class="gadgetBox">
 		<img src="${products[i].image}">
-		<p class="category">${products[i].category}</p>
-		<p class="product">${products[i].name} ${products[i].model}</p>
+		<p class="product">${products[i].name}</p>
 		<p class="price">${products[i].price} EUR</p>
 		<button id="${i}" class="add">Add to Cart</button>
 		<div>&#9825;&#8644;&#128065;</div>
