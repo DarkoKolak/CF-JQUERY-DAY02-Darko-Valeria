@@ -5,7 +5,6 @@ for (var i = 0; i < products.length; i++) {
 		<p class="product">${products[i].name}</p>
 		<p class="price">${products[i].price} EUR</p>
 		<button id="${i}" class="add">Add to Cart</button>
-		<div>&#9825;&#8644;&#128065;</div>
 		</div>`)
 }
 
@@ -22,9 +21,6 @@ function addToCart() {
 	cart[i] += 1; //
 	count += 1;
 	$("#items").text(count);
-
-	console.log(cart[i]);
-	console.log(count, typeof count);
 	closeCart();
 }
 

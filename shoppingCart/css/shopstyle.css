@@ -29,6 +29,7 @@ header {
   background-color: #8C4EA5;
   border: none;
   color: #ffffff; 
+  font-weight: bold;
 }
 
 nav {
@@ -70,6 +71,7 @@ nav {
   align-items: flex-start;
   border: 1px solid black;
   box-shadow: 1px 1px 3px grey, -1px -1px 3px grey;
+  color: white;
 }
 
 #shoppingCart > p {
@@ -90,6 +92,7 @@ nav {
 #cart-content {
   width: 100%;
   margin: 0 auto;
+  color: black;
 }
 
 .cartBox {
@@ -200,6 +203,7 @@ main {
   text-align: center;
   box-shadow: 1px 1px 5px grey, -1px -1px 5px grey;
   cursor: pointer;
+  padding-bottom: 1vw;
 }
 
 .gadgetBox > img, p, div {
